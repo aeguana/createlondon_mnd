@@ -1,0 +1,24 @@
+.wrapper-failed {
+  height: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-size: $font-size-subtitle;
+    font-weight: bold;
+    color: $green-color;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: $font-size-geral;
+    color: $color-primary;
+    margin: 100px 0 0;
+    padding: 60px 0;
+    border-top: 1px solid $gray-border-color;
+    text-align: center;
+    max-width: 500px;
+  }
+}

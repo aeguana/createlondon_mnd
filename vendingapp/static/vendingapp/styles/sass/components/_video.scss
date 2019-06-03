@@ -1,0 +1,18 @@
+//Video Wrapper Service
+#video-wrapper {
+    background-image: url('/static/vendingapp/assets/images/last-frame.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1 * $screen-width / 2;
+    width: $screen-width;
+    height: $screen-height;
+    z-index: 10000;
+
+    video {
+        width: $screen-width;
+        height: $screen-height;
+    }
+}

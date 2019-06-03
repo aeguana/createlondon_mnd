@@ -1,0 +1,49 @@
+//Keyboard styling
+.ui-keyboard {
+    padding: 20px;
+    width: 1080px;
+    left: 50%;
+    margin-left: -540px;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    background: $color-keyboard-bc;
+
+    .ui-keyboard-button {
+        font-size: 35px;
+        line-height: 23px;
+        margin: 4px;
+        padding: 35px;
+        height: auto;
+        background-color: $black !important;
+        background-image: linear-gradient(#202121, #000) !important;
+        color: $white !important;
+        border: 1px solid $white !important;
+        border-radius: 0;
+        transition: all 0.1s;
+        font-weight: 100;
+        font-family: sans-serif;
+        border-radius: 8px;
+        box-shadow: 0px -3px 15px -5px $white;
+        -webkit-box-shadow: 0px -3px 15px -5px $white;
+        -moz-box-shadow: 0px -3px 15px -5px $white;
+
+        &:active {
+            opacity: 0.5;
+        }
+
+        &.ui-keyboard-space {
+            width: 400px;
+        }
+
+        &.ui-keyboard-shift,
+        &.ui-keyboard-meta1,
+        &.ui-keyboard-meta2,
+        &.ui-keyboard-normal,
+        &.ui-keyboard-bksp,
+        &.ui-keyboard-accept {
+            background-color: $white;
+            color: $brand-color;
+        }
+    }
+}

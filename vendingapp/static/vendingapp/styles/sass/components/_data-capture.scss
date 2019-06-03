@@ -1,0 +1,108 @@
+.data-capture-wrapper {
+    &__question {
+        margin: 350px auto 0;
+        padding: 0 50px;
+        display: flex;
+
+        &>div {
+            min-width: 100px;
+            min-height: 100px;
+            width: 100px;
+            height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            color: $white;
+            font-size: 70px;
+            padding: 4px 30px;
+        }
+
+        &--1 {
+            background-color: $color-box-1;
+        }
+
+        &--2 {
+            background-color: $color-box-2;
+        }
+
+        &--3 {
+            background-color: $color-box-3;
+        }
+
+        &--4 {
+            background-color: $color-box-4;
+        }
+
+        &--5 {
+            background-color: $color-box-5;
+        }
+
+        &__title {
+            font-size: 70px;
+            text-align: left;
+            margin: 0 0 0 50px;
+            color: $white-color;
+        }
+    }
+
+    &__answers {
+        &--inline {
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            padding: 0 50px;
+            margin: 100px 0 200px;
+
+            &>div {
+                margin-bottom: 50px;
+            }
+        }
+
+        &--column {
+            display: flex;
+            flex-direction: column;
+            padding: 0 150px;
+            text-align: center;
+            margin: 50px 0 0;
+
+            &>div {
+                margin-bottom: 20px;
+            }
+        }
+
+        &>div {
+            background-color: $white;
+            box-shadow: 6px 5px 5px 6px $color-secondary;
+            color: $color-blue;
+            font-size: 70px;
+            padding: 30px;
+            min-width: 150px;
+            min-height: 150px;
+        }
+    }
+
+    &__response {
+        margin: 100px 0 50px;
+        text-align: center;
+
+        &__title {
+            font-size: 70px;
+            text-align: center;
+            margin: 0 0 0 50px;
+            color: $white-color;
+            margin-bottom: 50px;
+        }
+
+        &>div {
+            background-color: $white;
+            color: $color-blue;
+            font-size: 90px;
+            padding: 60px;
+            display: inline-block;
+            min-width: 250px;
+            min-height: 250px;
+            border-right: 15px solid $color-secondary;
+            border-bottom: 25px solid $color-secondary;
+            box-shadow: 0px 0px 15px 15px $green-color-correct;
+        }
+    }
+}

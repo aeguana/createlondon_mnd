@@ -1,0 +1,231 @@
+.basket {
+    width: 100%;
+    background-color: rgba(130, 130, 130, 0.3);
+    padding: 14px; // Weird single pixel rounding issue ffs
+
+    .basket-content {
+        background-color: rgba(27, 55, 88, 0.8);
+        overflow: hidden;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -40px;
+        right: 0;
+        height: 30px;
+        background-color: white;
+        opacity: 0.5;
+    }
+
+    .basket-items-container {
+        position: relative;
+        overflow-x: auto;
+        -webkit-flex-wrap: nowrap !important;
+        -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+        display: flex;
+        -webkit-box-orient: horizontal !important;
+        -webkit-box-direction: normal !important;
+        -webkit-flex-direction: row !important;
+        -ms-flex-direction: row !important;
+        flex-direction: row !important;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 30px;
+            border: 1px solid $blue-brand-color;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #101D33;
+            border: 1px solid $blue-brand-color;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $white;
+            border: 1px solid $blue-brand-color;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: $brand-color;
+            border: 1px solid $blue-brand-color;
+        }
+
+        .basket-item {
+            display: flex;
+            flex: 0 0 42%;
+            position: relative;
+            max-width: 42%;
+            height: 100%;
+            float: left;
+            padding: 30px 15px;
+            overflow: hidden;
+            background-color: $white;
+
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+
+            .close {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                float: none;
+            }
+
+            .product-img {
+                float: left;
+                width: 50%;
+                height: 190px;
+                background-size: cover;
+            }
+
+            .product-content {
+                float: left;
+                margin-top: 40px;
+                width: 50%;
+                height: 100%;
+
+                .product-name {
+                    color: $brand-color;
+                    font-size: $font-size-geral;
+                    padding-left: 10px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    margin-top: 50px;
+                }
+
+                .product-price {
+                    font-size: $font-size-geral;
+                    padding-left: 10px;
+                    color: #C1C0C0;
+                }
+            }
+        }
+    }
+
+    .basket-total-container {
+        padding: 30px;
+        height: 250px;
+        background-color: $blue-brand-color;
+        color: $white;
+
+        .basket-total-header {
+            font-size: 26px;
+        }
+
+        .basket-total-price {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+    }
+}
+
+.checkout-items-container {
+    position: relative;
+    overflow-x: auto;
+    -webkit-flex-wrap: nowrap !important;
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+    display: flex;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+    -webkit-flex-direction: row !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+
+    &.more-items {
+        justify-content: flex-start !important;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 30px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #101D33;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $white;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $brand-color;
+    }
+
+    .basket-item {
+        position: relative;
+        display: flex;
+        flex: 0 0 42%;
+        max-width: 42%;
+        height: 100%;
+        float: left;
+        padding: 30px;
+        overflow: hidden;
+        color: $brand-color;
+        font-size: $font-size-geral;
+        border: 1px solid #ccc;
+        background-color: $white;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        .close {
+            width: 40px;
+            height: 40px;
+            float: none;
+        }
+
+        .product-img {
+            float: left;
+            width: 50%;
+            height: 190px;
+            background-size: cover;
+        }
+
+        .product-content {
+            float: left;
+            width: 50%;
+            height: 100%;
+            margin-left: 15px;
+
+            .product-name {
+                font-size: $font-size-geral;
+                padding-left: 10px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                margin-top: 50px;
+            }
+
+            .product-price {
+                font-size: $font-size-geral;
+                padding-left: 10px;
+                color: #C1C0C0;
+            }
+        }
+    }
+}
+
+.basket-total {
+    font-size: $font-size-subtitle;
+    color: #BDBDBD;
+}

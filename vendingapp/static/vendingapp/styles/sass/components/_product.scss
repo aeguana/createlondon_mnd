@@ -1,0 +1,515 @@
+#main-container {
+  // padding: 15px;
+  width: $screen-width;
+  height: $screen-height;
+  position: relative;
+  margin: auto;
+
+  .header {
+    padding: 15px;
+
+    .product-filter {
+      font-size: $font-size-geral;
+      font-family: HelveticaNeue;
+      font-weight: bold;
+      color: $brand-color;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .filter-buttons {
+      margin-top: 15px;
+
+      >div:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .content-body {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.product-container {
+  overflow-y: auto;
+  padding: 0;
+  height: 100% !important;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #101D33;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $white;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $brand-color;
+  }
+
+  &.has-order {
+    height: 1340px;
+  }
+
+  &__header {
+    background-color: $gray-border-color;
+    text-align: center;
+
+    >img {
+      height: 200px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    height: calc(100% - 200px);
+  }
+
+  &__list {
+    width: calc(100% - 250px);
+    padding: 10px 0 10px 5px;
+
+    &__cols {
+      display: flex;
+      height: 100%;
+
+      &>div {
+        width: 100%;
+      }
+    }
+
+    &__item {
+      padding: 0 0 10px 10px;
+      height: 440px;
+      position: relative;
+    }
+  }
+
+  &__basket {
+    width: 250px;
+    background-color: $white !important;
+
+    &__wrapper {
+      border: 1px solid $gray-border-color;
+      height: 100%;
+      position: relative;
+
+      &__menu {
+        font-size: $font-size-menu;
+        font-weight: bold;
+
+        &__item {
+          padding: 0 10px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          border-bottom: 1px solid $gray-border-color;
+
+          &.all {
+            color: $green-color;
+          }
+
+          &.mains {
+            color: $rose-color;
+          }
+
+          &.snacks {
+            color: $yellow-color;
+          }
+
+          &.drinks {
+            color: $blue-1-color;
+          }
+        }
+
+        &__active {
+          color: $white !important;
+          position: relative;
+
+          &:after,
+          &:before {
+            right: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+          }
+
+          &:after {
+            border-color: transparent;
+            border-width: 15px;
+            margin-top: -15px;
+          }
+
+          &:before {
+            border-color: transparent;
+            border-right-color: transparent;
+            border-width: 36px;
+            margin-top: -36px;
+          }
+
+          &.all {
+            background-color: $green-color;
+
+            &:after {
+              border-right-color: $green-color;
+            }
+          }
+
+          &.mains {
+            background-color: $rose-color;
+
+            &:after {
+              border-right-color: $rose-color;
+            }
+          }
+
+          &.snacks {
+            background-color: $yellow-color;
+
+            &:after {
+              border-right-color: $yellow-color;
+            }
+          }
+
+          &.drinks {
+            background-color: $blue-1-color;
+
+            &:after {
+              border-right-color: $blue-1-color;
+            }
+          }
+        }
+      }
+
+      &__modes {
+        padding: 0 10px;
+        font-size: $font-size-filter;
+        font-weight: bold;
+        border-bottom: 1px solid $gray-border-color;
+
+        &__item {
+          padding: 0 10px;
+          margin: 10px 0;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          color: $blue-2-color;
+          border: 1px solid transparent;
+
+          &>img {
+            margin-right: 10px;
+            height: 20px;
+          }
+        }
+
+        &__active {
+          border: 1px solid $green-color;
+          border-radius: 8px;
+        }
+      }
+
+      &__empty {
+        display: none;
+        padding: 35px;
+        border-bottom: 1px solid $gray-border-color;
+      }
+
+      &__pay {
+        padding: 20px;
+
+        &__circle {
+          border: 1px solid $green-color;
+          background-color: $green-color;
+          color: $white;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: 180px;
+          width: 180px;
+          margin: auto;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        &__text {
+          font-size: $font-size-subtitle;
+        }
+
+        &__price {
+          font-size: $font-size-title;
+        }
+      }
+
+      &__list {
+        padding: 0;
+        height: calc(100% - 950px);
+        padding: 0 10px 14px 5px;
+        overflow: auto;
+        width: calc(100% - 1px);
+
+        &__header {
+          height: 50px;
+          border-top: 1px solid $gray-border-color;
+          border-bottom: 1px solid $gray-border-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-primary;
+          font-size: $font-size-geral;
+
+          &>i {
+            margin-right: 10px;
+          }
+        }
+
+        &__item {
+          border-top: 1px solid $gray-border-color;
+          border-bottom: 1px solid $gray-border-color;
+
+          &:first-child {
+            border-top: none;
+          }
+
+          &__header {
+            position: relative;
+
+            &__image {
+              background-size: contain;
+              background-position: left;
+              background-repeat: no-repeat;
+              overflow: hidden;
+              width: 140px;
+              height: 140px;
+              border-right: 1px solid $gray-border-color;
+              border-bottom: 1px solid $gray-border-color;
+            }
+
+            &__close {
+              top: 5px !important;
+              right: 10px !important;
+              width: 30px !important;
+            }
+          }
+
+          &__content {
+            position: relative;
+            color: $gray-5-color;
+
+            &__name {
+              font-weight: bold;
+              padding: 10px 10px 5px;
+            }
+
+            &__price {
+              padding: 0 10px 10px;
+            }
+          }
+        }
+      }
+
+      &__deficient {
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        cursor: pointer;
+
+        &__image {
+          background-image: url("/static/vendingapp/assets/images/deficient.png");
+          width: 120px;
+          height: 120px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+.no-header {
+  .product-container {
+    &__flex {
+      height: 100%;
+    }
+  }
+}
+
+.product-card {
+  background-color: $white;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: $border-radius;
+  border: 1px solid $gray-border-color;
+
+  &__content {
+    padding: 0;
+
+    &:not(:first-child) {
+      border-top: 2px solid #d2d2d2;
+    }
+  }
+
+  &__information {
+    padding: 10px;
+  }
+
+  &__img {
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    height: 209px;
+  }
+
+  &__name {
+    font-size: $font-size-name;
+    padding: 0;
+    color: $gray-5-color;
+    font-weight: bold;
+    word-break: break-all;
+  }
+
+  &__excerpt {
+    font-size: $font-size-geral;
+    font-weight: bold;
+    color: $gray-5-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 0px 25px 0;
+  }
+
+  &__colors {
+    &--All {
+      background-color: $green-color !important;
+    }
+
+    &--Mains {
+      background-color: $rose-color !important;
+    }
+
+    &--Main {
+      background-color: $rose-color !important;
+    }
+
+    &--Snacks {
+      background-color: $yellow-color !important;
+    }
+
+    &--Drinks {
+      background-color: $blue-1-color !important;
+    }
+
+    &--Juices {
+      background-color: $blue-1-color !important;
+    }
+
+    &--green {
+      color: $green-color;
+    }
+
+    &--yellow {
+      color: $yellow-color;
+    }
+
+    &--blue {
+      color: $blue-2-color;
+    }
+  }
+
+  &__price {
+    font-size: $font-size-subtitle;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0 10px;
+    color: $green-color;
+    font-weight: bold;
+    bottom: 50px;
+    width: 100%;
+
+    &>img {
+      margin-right: 10px;
+      height: 25px;
+    }
+
+    &__text {
+      width: 100%;
+    }
+
+    &__icon {
+      font-size: $font-size-menu;
+      font-weight: bold;
+      padding: 0 5px;
+
+      &--hide {
+        display: none !important;
+      }
+    }
+  }
+
+  &__stock {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: 'Out Of Stock!';
+    font-family: QuestaGrande;
+    font-size: $font-size-title;
+    text-align: center;
+    padding: 120px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    >.btn {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      >i {
+        margin-right: 10px;
+      }
+
+      &:first-child {
+        margin-right: 0.5px;
+      }
+
+      &:last-child {
+        margin-left: 0.5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+body,
+html {
+  height: 100%;
+  cursor: none !important;
+}
+
+body {
+  width: $screen-width;
+  height: $screen-height;
+  position: relative;
+  font-size: $font-size;
+  font-family: Neuzeit Grotesk;
+  src: url("/static/vendingapp/assets/fonts/NeuzeitGroteskW01Regular.otf") format("truetype");
+  color: $color-primary;
+  background-color: $background-primary;
+  background-repeat: no-repeat;
+}
+
+.disable-selection {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.body-content {
+  background-color: $white;
+  width: 80%;
+  height: 1560px;
+  margin: 260px auto 0;
+  padding: 120px 0;
+}
+
+.screen {
+  width: $screen-width;
+  height: $screen-height;
+  position: relative;
+  overflow: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--complete {
+    background-image: url("/static/vendingapp/assets/images/complete.jpeg");
+  }
+
+  &--vending {
+    background-image: url("/static/vendingapp/assets/images/vending.jpeg");
+  }
+
+  &--start {
+    background-image: url("/static/vendingapp/assets/images/start.jpeg");
+  }
+
+  &--generic {
+    background-image: url("/static/vendingapp/assets/images/generic.jpeg");
+
+    &__simbols {
+      font-size: 40px;
+      color: $white;
+      position: absolute;
+      top: 325px;
+      left: 130px;
+    }
+  }
+
+  &--oops {
+    background-image: url("/static/vendingapp/assets/images/incorrect.jpeg");
+  }
+
+  &--disabled {
+    background-color: #000;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  &--info {
+    &__text {
+      padding: 400px 100px;
+      text-align: center;
+      font-size: 100px;
+      color: $white-color;
+    }
+  }
+
+  &__scroll {
+    overflow: auto;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $white-color;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $scroll-color;
+    }
+  }
+
+  &.screen-select-route {
+    background-image: url("/static/vendingapp/assets/images/home-screen.jpg");
+  }
+
+  &.screen-social-trigger {
+    background-image: url("/static/vendingapp/assets/images/social-trigger-screen.jpg");
+  }
+
+  &.screen-social-complete {
+    background-image: url("/static/vendingapp/assets/images/social-complete-screen.jpg");
+  }
+
+  &.screen-social-vending {
+    background-image: url("/static/vendingapp/assets/images/pie-on-the-way-screen.jpg");
+  }
+
+  &.screen-failed {
+    background-image: url("/static/vendingapp/assets/images/failed-screen.jpg");
+  }
+
+  &.screen-vending {
+    background-image: url("/static/vendingapp/assets/images/vending-in-progress-screen.jpg");
+  }
+
+  &.screen-purchase-complete {
+    background-image: url("/static/vendingapp/assets/images/thank-you-goodies-screen.jpg");
+  }
+
+  &.screen-products {
+    padding: 0;
+    background: white;
+
+    &--top {
+      padding: 280px 0 0;
+    }
+  }
+
+  &.screen-white {
+    padding: 0;
+    background: white;
+
+    &--top {
+      padding: 280px 0 0;
+    }
+  }
+}

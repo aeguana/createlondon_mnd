@@ -1,0 +1,109 @@
+.wrapper-pay {
+  height: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-size: 35px;
+    padding: 0 0 40px;
+    font-weight: bold;
+    color: $green-color;
+  }
+
+  &__list {
+    display: flex;
+
+    &__item {
+      min-width: 200px;
+      border: 1px solid $gray-border-color;
+      border-radius: $border-radius;
+      font-size: $font-size-geral;
+      margin: 10px;
+
+      &__image {
+        & > div {
+          background-size: contain;
+          background-position: left;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          width: 180px;
+          height: 180px;
+          border-radius: $border-radius;
+          border-right: 1px solid $gray-border-color;
+          border-bottom: 1px solid $gray-border-color;
+        }
+      }
+
+      &__name {
+        color: $color-primary;
+        font-weight: bold;
+        white-space: nowrap;
+        padding: 10px;
+      }
+
+      &__price {
+        color: $color-primary;
+        padding: 0 10px 10px;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+
+    &__text {
+      color: $color-primary;
+      font-size: $font-size-geral;
+      margin: 10px 20px 0 0;
+    }
+
+    &__value {
+      color: $green-color;
+      font-weight: bold;
+      font-size: $font-size-title;
+    }
+  }
+
+  &__content {
+    max-width: 680px;
+    text-align: center;
+    border-top: 1px solid $gray-border-color;
+    margin: 40px 0 0;
+
+    &__image {
+      background-image: url("/static/vendingapp/assets/images/contactless-icon.jpg");
+      width: 120px;
+      height: 120px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: auto;
+    }
+
+    &__title {
+      color: $green-color;
+      font-weight: bold;
+      font-size: $font-size-subtitle;
+      padding: 20px;
+    }
+
+    &__text {
+      color: $gray-5-color;
+      font-weight: bold;
+      font-size: $font-size-subtitle;
+    }
+
+    &__button {
+      border-radius: $border-radius;
+      background-color: $white;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+      margin: 50px 0 0;
+      width: 200px;
+      font-size: $font-size-geral;
+    }
+  }
+}

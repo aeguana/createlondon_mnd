@@ -1,0 +1,39 @@
+// @font-face {
+//   font-family: HelveticaNeue;
+//   src: url("/static/vendingapp/fonts/helvetica/HelveticaNeueLTStd-Roman.otf") format("opentype");
+//   font-weight: normal;
+// }
+// @font-face {
+//   font-family: HelveticaNeue;
+//   src: url("/static/vendingapp/fonts/helvetica/HelveticaNeueLTStd-Bd.otf") format("opentype");
+//   font-weight: bold;
+// }
+@font-face {
+  font-family: Neuzeit Grotesk;
+  src: url("/static/vendingapp/assets/fonts/NeuzeitGroteskW01Regular.otf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Neuzeit Grotesk;
+  src: url("/static/vendingapp/assets/fonts/NeuzeitGroteskW01Regular.otf") format("truetype");
+  font-weight: bold;
+}
+//Main heading styles
+.h1,
+h1 {
+  font-size: 30px;
+  margin: 30px 0;
+  color: $brand-color;
+}
+
+.h2,
+h2 {
+  font-size: 24px;
+  margin: 30px 0;
+  color: #6C6D6D;
+}
+
+p {
+  font-size: 18px;
+  color: $color-primary;
+}

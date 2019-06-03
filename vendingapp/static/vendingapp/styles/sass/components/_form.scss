@@ -1,0 +1,25 @@
+//Form styling
+.form-control {
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    font-size: 26px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    padding: 40px;
+
+    &:focus {
+        box-shadow: none;
+        border-top: 2px solid transparent;
+    }
+}
+
+input.ng-invalid.ng-touched,
+input.required-error {
+    border: 2px solid red !important;
+    color: red;
+
+    +label {
+        color: red;
+    }
+}

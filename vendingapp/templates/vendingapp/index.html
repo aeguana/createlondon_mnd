@@ -1,0 +1,88 @@
+{% load compress static raven %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Vend (Touch)</title>
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/dist/css/bootstrap.css" %}"/>
+    <link type="text/css" href="{% static "keyboard/dist/css/keyboard.min.css" %}" rel="stylesheet">
+    <link type="text/css" href="{% static "vendingapp/assets/fonts/css/fontawesome-all.min.css" %}" rel="stylesheet">
+    <link type="text/x-scss" href="{% static "vendingapp/styles/sass/styles.scss" %}" rel="stylesheet">
+    {% endcompress %}
+</head>
+
+<body class="no-default-scroll disable-selection" ng-app="digitalvendtouch">
+
+    <!-- Video Overlay Service -->
+    <div id="video-wrapper" style="display:none;">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-container">
+        <div class="content-body" ui-view></div>
+    </div>
+
+    {% compress js %}
+    <script src="{% static 'lodash/dist/lodash.js' %}" type="text/javascript"></script>
+    <script src="{% static 'jquery/dist/jquery.js' %}" type="text/javascript"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.js' %}" type="text/javascript"></script>
+    <script src="{% static 'decimal.js/decimal.js' %}" type="text/javascript"></script>
+    <script src="{% static 'angular/angular.js' %}" type="text/javascript"></script>
+    <script src="{% static 'angular-ui-router/release/angular-ui-router.js' %}" type="text/javascript"></script>
+    <script src="{% static 'reconnectingWebsocket/reconnecting-websocket.js' %}" type="text/javascript"></script>
+    <script src="{% static 'keyboard/dist/js/jquery.keyboard.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'ng-virtual-keyboard/dist/ng-virtual-keyboard.js' %}" type="text/javascript"></script>
+    <script src="{% static 'angular-bootstrap/ui-bootstrap-tpls.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'angular-sanitize/angular-sanitize.min.js' %}" type="text/javascript"></script>
+
+    <!-- Third party packages from Core -->
+    <script src="{% static 'digitalvendcore/js/raven.min.js' %}"></script>
+
+    {% endcompress %}
+
+    <script>
+        var options = {
+            logger: 'my-test-logger',
+            whitelistUrls: [
+                /localhost/,
+                /localhost:8000/
+            ]
+        };
+        Raven.config("{% sentry_public_dsn 'https' %}", options);
+        Raven.debug = false;
+        Raven.install();
+
+        window.onerror = function (msg) {
+            Raven.captureException(new Error(msg));
+        };
+
+    </script>
+
+    {% compress js %}
+    <script src="{% static 'vendingapp/scripts/app.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/scripts/config/routes.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/generic/main/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/collect-data/details/details-capture.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/collect-data/data/data-capture.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/collect-data/vending/vending.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/complete/success.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/generic/oops/oops.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/states/generic/disabled/disabled.js' %}" type="text/javascript"></script>
+
+    <script src="{% static 'vendingapp/scripts/services/data-capture-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendingapp/scripts/services/machine-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/root/basket-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/root/vending-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/root/product-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/root/category-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/sockets/socket-service.js' %}" type="text/javascript"></script>
+    <script src="{% static 'digitalvendcore/js/overlays/overlay-service.js' %}" type="text/javascript"></script>
+
+    <script src="{% static 'vendingapp/states/test/services.js' %}"></script>
+    {% endcompress %}
+
+</body>
+
+</html>
