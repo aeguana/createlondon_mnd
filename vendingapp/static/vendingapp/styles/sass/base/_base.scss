@@ -48,7 +48,8 @@ body {
   }
 
   &--start {
-    background-image: url("/static/vendingapp/assets/images/start.jpeg");
+    // background-image: url("/static/vendingapp/assets/images/start.jpeg");
+    background: $white;
   }
 
   &--generic {
