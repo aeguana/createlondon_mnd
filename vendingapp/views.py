@@ -3,8 +3,8 @@ import json
 import os
 import requests
 import uuid
-import cups
-import os.path
+#import cups
+#import os.path
 
 from datetime import datetime, timedelta
 from time import sleep
@@ -85,14 +85,14 @@ def verify_email(request):
 
 @api_view(['GET'])
 def send_print(request):
-    conn = cups.Connection()
-    printers = conn.getPrinters()
-    if (len(printers) > 0):
-        printer_name = conn.getDefault()
-        BASE = os.path.dirname(os.path.abspath(__file__))
-        file = open(os.path.join(BASE, "file.txt"))
-        conn.printFile(printer_name, file.name, "Adidas", {"copies": "1"})
-        return Response("Success")
-    else:
-        return Response("No printers")
+    # conn = cups.Connection()
+    # printers = conn.getPrinters()
+    # if (len(printers) > 0):
+    #     printer_name = conn.getDefault()
+    #     BASE = os.path.dirname(os.path.abspath(__file__))
+    #     file = open(os.path.join(BASE, "file.txt"))
+    #     conn.printFile(printer_name, file.name, "Adidas", {"copies": "1"})
+    #     return Response("Success")
+    # else:
+    #     return Response("No printers")
     return Response("Success")
