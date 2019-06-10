@@ -40,7 +40,7 @@ video {
   width: $screen-width;
   height: $screen-height;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -93,7 +93,7 @@ video {
   }
 
   &__scroll {
-    overflow: auto;
+    overflow: hidden;
 
     /* width */
     &::-webkit-scrollbar {
