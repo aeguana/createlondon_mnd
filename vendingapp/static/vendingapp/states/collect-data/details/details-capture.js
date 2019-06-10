@@ -8,17 +8,9 @@ app.controller('EmailCaptureCtrl', function (
     $timeout
 ) {
 
-    var listenerEvent = $scope.$on('ALERT', function (event, data) {
-        if (data == 69) {
-            $state.go('root.data');
-        } else if (data == 68) {
-            $state.go('root.disabled');
-        }
-    });
-
-    $timeout(function () {
+    var listenerEvent = $scope.$on('DONATION', function (event, data) {
         $scope.refreshVideo(2);
-    }, 10000);
+    });
 
     $scope.refreshVideo = function (status) {
         var parent = document.getElementById('video-container');
