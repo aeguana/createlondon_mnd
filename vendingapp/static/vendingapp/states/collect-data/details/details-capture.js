@@ -30,9 +30,7 @@ app.controller('EmailCaptureCtrl', function (
         }
     };
 
-    $scope.activeVideo = function () {
-        $scope.refreshVideo(1);
-    };
+    $scope.refreshVideo(1);
 
     $scope.insertPin = function () {
         $state.go('root.data');
