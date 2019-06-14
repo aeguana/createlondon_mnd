@@ -18,11 +18,11 @@ app.controller('EmailCaptureCtrl', function (
         var video = document.createElement('video');
         parent.appendChild(video);
         if (status == 1) {
-            video.src = '/static/vendingapp/assets/videos/loop.mp4';
+            video.src = '/static/vendingapp/assets/videos/loop.mov';
             video.loop = true;
             video.play();
         } else {
-            video.src = '/static/vendingapp/assets/videos/video.mp4';
+            video.src = '/static/vendingapp/assets/videos/video.mov';
             video.onended = function (e) {
                 $scope.refreshVideo(1);
             };
