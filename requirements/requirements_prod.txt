@@ -13,7 +13,7 @@ constantly==15.1.0
 contextlib2==0.5.5
 cryptography==2.1.4
 -e git+ssh://git@digitalvendcore.github.com/aeguana/digitalvendcore.git#egg=digitalvendcore
-Django==1.11.5
+Django==1.11.29
 django-appconf==1.0.2
 django-compressor==2.1
 django-libsass==0.7
