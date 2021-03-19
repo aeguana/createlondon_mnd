@@ -18,7 +18,7 @@ django-compressor==2.1
 django-debug-toolbar==1.9.1
 django-libsass==0.7
 django-taggit==0.21.3
-djangorestframework==3.4.7
+djangorestframework==3.11.2
 djangorestframework-camel-case==0.2.0
 Fabric3==1.13.1.post1
 honcho==0.7.1
